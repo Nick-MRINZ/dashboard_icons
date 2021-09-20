@@ -1,0 +1,51 @@
+{
+    "name": "Dashboard Icon Switch",
+
+    "namespace": "MRINZ\\dashboard",
+
+    "description": "A module that switches the icons on the record status dashboard.",
+
+    "authors": [
+        {
+            "name": "Nick Shortt",
+            "email": "nick.shortt@mrinz.ac.nz",
+            "institution": "Medical Research Institute of New Zealand"
+        }
+    ],
+
+    "framework-version": 5,
+
+    "permissions": [
+        "redcap_every_page_top"
+    ],
+
+    "enable-every-page-hooks-on-system-pages": false,
+
+    "system-settings": [
+      {
+        "key": "global_yn",
+        "name": "Activate for all users?",
+        "required": true,
+        "type": "radio",
+        "choices": [
+          {
+            "value": "1",
+            "name": "Yes"
+          },
+          {
+            "value": "0",
+            "name": "No"
+          }
+        ]
+      },
+      {
+          "key": "user",
+          "name": "Activate for a Specific User",
+          "type": "text",
+          "repeatable": true
+      }
+    ],
+    "compatibility": {
+      "redcap-version-min": "8.2.1"
+    }
+}
