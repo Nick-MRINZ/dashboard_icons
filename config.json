@@ -13,7 +13,7 @@
         }
     ],
 
-    "framework-version": 5,
+    "framework-version": 6,
 
     "permissions": [
         "redcap_every_page_top"
