@@ -12,7 +12,7 @@ use \REDCap as REDCap;
 class dashboard extends AbstractExternalModule
 {
 
-  public function redcap_every_page_top($project_id, $record, $instrument, $event_id, $group_id, $repeat_instance) {
+  public function redcap_every_page_top($project_id) {
     //The script below replaces the form icons on the dashboards to make it easier for colourblind users.
     if($this->getSystemSetting('global_yn') == '1' || in_array(USERID, $this->getSystemSetting('user'))){
     	if (PAGE == 'DataEntry/record_status_dashboard.php' || PAGE == 'DataEntry/record_home.php' || PAGE == 'DataEntry/index.php') {
