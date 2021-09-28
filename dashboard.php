@@ -52,11 +52,13 @@ class dashboard extends AbstractExternalModule
           });
 
           <?php if(PAGE == 'DataEntry/record_status_dashboard.php' || PAGE == 'DataEntry/record_home.php'){ ?>
-            $('#status-icon-legend tr:last').remove();
-            $('#status-icon-legend').append('<tr><td colspan=2><i class="fas fa-layer-group fa-fw"></i> Many Statuses (Mixed)</td></tr>');
-            $('#status-icon-legend').append('<tr><td colspan=2><i class="fas fa-layer-group fa-fw text-success"></i><i class="fas fa-check fa-fw text-success"></i> Many Statuses (Complete)</td></tr>');
-            $('#status-icon-legend').append('<tr><td colspan=2><i class="fas fa-layer-group fa-fw text-warning"></i><i class="fas fa-question fa-fw text-warning"></i> Many Statuses (Unverified)</td></tr>');
-            $('#status-icon-legend').append('<tr><td colspan=2><i class="fas fa-layer-group fa-fw text-danger"></i><i class="fas fa-times fa-fw text-danger"></i> Many Statuses (Incomplete)</td></tr>');
+            $('#status-icon-legend').find("tr:gt(1)").remove();
+            $('#status-icon-legend').append('<tr><td class="nowrap" style="padding-right:5px;"><i class="fas fa-question-circle text-warning"></i> Unverified</td><td class="nowrap" style="padding-right:5px;"><i class="far fa-times-circle text-warning"></i> Partial Survey Response</td></tr>');
+            $('#status-icon-legend').append('<tr><td class="nowrap" style="padding-right:5px;"><i class="fas fa-check-circle text-success"></i> Complete </td><td class="nowrap" style="padding-right:5px;"><i class="far fa-check-circle text-success"></i> Completed Survey Response</td></tr>')
+            $('#status-icon-legend').append('<tr><td colspan=2 class="nowrap" style="padding-right:5px;"><i class="fas fa-layer-group fa-fw"></i> Many Statuses (Mixed)</td></tr>');
+            $('#status-icon-legend').append('<tr><td colspan=2 class="nowrap" style="padding-right:5px;"><i class="fas fa-layer-group fa-fw text-success"></i><i class="fas fa-check fa-fw text-success"></i> Many Statuses (Complete)</td></tr>');
+            $('#status-icon-legend').append('<tr><td colspan=2 class="nowrap" style="padding-right:5px;"><i class="fas fa-layer-group fa-fw text-warning"></i><i class="fas fa-question fa-fw text-warning"></i> Many Statuses (Unverified)</td></tr>');
+            $('#status-icon-legend').append('<tr><td colspan=2 class="nowrap" style="padding-right:5px;"><i class="fas fa-layer-group fa-fw text-danger"></i><i class="fas fa-times fa-fw text-danger"></i> Many Statuses (Incomplete)</td></tr>');
           <?php } ?>
 
 
